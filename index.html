@@ -55,7 +55,6 @@
   #noButton {
     background-color: #f44336;
     color: white;
-    display: none;
   }
 
   img {
@@ -111,7 +110,7 @@
         noButton.textContent = phrases[phraseIndex];
         yesButton.style.width = `${parseInt(yesButton.style.width || 200) * 1.5}px`;
         if (noButton.getBoundingClientRect().bottom > container.getBoundingClientRect().bottom) {
-          noButton.style.display = "block";
+          noButton.style.position = "static";
         }
       };
 
