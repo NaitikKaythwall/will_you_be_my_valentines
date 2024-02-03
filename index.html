@@ -27,9 +27,8 @@
 
   .button-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
 
   button {
@@ -48,8 +47,7 @@
   #yesButton {
     background-color: #4caf50;
     color: white;
-    margin-bottom: 1rem;
-    width: 200px; /* Initial width */
+    margin-right: 1rem;
   }
 
   #noButton {
@@ -79,7 +77,6 @@
       const yesButton = document.getElementById('yesButton');
       const noButton = document.getElementById('noButton');
       const bearImage = document.querySelector('img');
-      const container = document.querySelector('.container');
 
       let noCount = 0;
       let yesPressed = false;
@@ -108,10 +105,7 @@
         noCount++;
         phraseIndex = noCount % phrases.length;
         noButton.textContent = phrases[phraseIndex];
-        yesButton.style.width = `${parseInt(yesButton.style.width || 200) * 1.5}px`;
-        if (noButton.getBoundingClientRect().bottom > container.getBoundingClientRect().bottom) {
-          noButton.style.position = "static";
-        }
+        yesButton.style.fontSize = `${parseInt(yesButton.style.fontSize || 16) + 20}px`;
       };
 
       const handleYesClick = () => {
