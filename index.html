@@ -30,7 +30,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, font-size 0.3s ease;
   }
 
   button:hover {
@@ -73,6 +73,7 @@
 
       let noCount = 0;
       let yesPressed = false;
+      let phraseIndex = 0;
 
       const phrases = [
         "No",
@@ -95,7 +96,9 @@
 
       const handleNoClick = () => {
         noCount++;
-        noButton.textContent = noCount === 1 ? "No" : phrases[Math.min(noCount - 1, phrases.length - 1)];
+        phraseIndex = noCount % phrases.length;
+        noButton.textContent = phrases[phraseIndex];
+        yesButton.style.fontSize = `${parseInt(yesButton.style.fontSize || 16) + 20}px`;
       };
 
       const handleYesClick = () => {
