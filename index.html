@@ -49,6 +49,7 @@
     background-color: #4caf50;
     color: white;
     margin-bottom: 1rem;
+    width: 200px; /* Initial width */
   }
 
   #noButton {
@@ -108,7 +109,7 @@
         noCount++;
         phraseIndex = noCount % phrases.length;
         noButton.textContent = phrases[phraseIndex];
-        yesButton.style.fontSize = `${parseInt(yesButton.style.fontSize || 16) + 20}px`;
+        yesButton.style.width = `${parseInt(yesButton.style.width || 200) * 1.5}px`;
         if (noButton.getBoundingClientRect().bottom > container.getBoundingClientRect().bottom) {
           noButton.style.display = "block";
         }
