@@ -5,16 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Will You Be My Valentine?</title>
 <style>
-  /* Add your CSS styles here */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    filter: brightness(0.8);
+  }
+
+  #yesButton {
+    background-color: #4caf50;
+    color: white;
+    margin-right: 1rem;
+  }
+
+  #noButton {
+    background-color: #f44336;
+    color: white;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
 </style>
 </head>
 <body>
-  <div class="flex flex-col items-center justify-center h-screen">
-    <img src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif" alt="Cute Love Bear" style="height: 200px;">
-    <h1 class="text-4xl my-4">Will you be my Valentine?</h1>
+  <div class="container">
+    <img src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif" alt="Cute Love Bear">
+    <h1>Will you be my Valentine?</h1>
     <div>
-      <button id="yesButton" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4">Yes</button>
-      <button id="noButton" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">No</button>
+      <button id="yesButton">Yes</button>
+      <button id="noButton">No</button>
     </div>
   </div>
 
@@ -26,7 +73,6 @@
 
       let noCount = 0;
       let yesPressed = false;
-      let yesButtonSize = 16;
 
       const phrases = [
         "No",
@@ -57,7 +103,6 @@
         bearImage.src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
         bearImage.alt = "Bear Kisses";
         bearImage.style.height = "auto";
-        bearImage.style.maxWidth = "100%";
         document.querySelector('h1').textContent = "Ok yay!!!";
       };
 
