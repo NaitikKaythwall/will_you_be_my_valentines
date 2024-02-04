@@ -27,6 +27,10 @@
   }
 
   .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Align buttons vertically */
     position: relative; /* Position relative for absolute positioning */
   }
 
@@ -47,16 +51,16 @@
   #yesButton {
     background-color: #4caf50;
     color: white;
-    margin-right: 1rem;
+    margin-bottom: 1rem; /* Spacing between buttons */
   }
 
   #noButton {
     background-color: #f44336;
     color: white;
     position: absolute; /* Position absolute for fixed location */
-    top: 50%; /* Center vertically */
-    right: 1rem; /* Fixed location from the right */
-    transform: translateY(-50%); /* Adjust vertical centering */
+    bottom: -2rem; /* Adjust the position below the "Yes" button */
+    left: 50%; /* Align horizontally */
+    transform: translateX(-50%); /* Center horizontally */
   }
 
   img {
